@@ -16,19 +16,32 @@ const playersPromise = fetchPlayers();
 
 function App() {
   // Toggleing State
-  const [toggle, setToggle] = useState(true);
+  const [activeTab, setActiveTab] = useState("available");
+  // Toggleing Function
+  const handleToggle = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  // Blance State
+  const [availableBalance, setAvailableBalance] = useState(6000000);
+
   return (
     <div>
-      <Navbar />
+      <Navbar availableBalance={availableBalance} />
       <HeroSection />
-      <RoutingSection />
-      <Suspense
-        fallback={<span className="loading loading-dots loading-lg"></span>}
-      >
-        <AvailablePlayers playersPromise={playersPromise} />
-      </Suspense>
+      <RoutingSection activeTab={activeTab} handleToggle={handleToggle} />
 
-      <SelectedPlayes />
+      {activeTab === "available" ? (
+        <Suspense
+          fallback={<span className="loading loading-dots loading-lg"></span>}
+        >
+          <div className="max-w-7xl my-8 mx-auto grid grid-cols-3 gap-5">
+            <AvailablePlayers availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} playersPromise={playersPromise} />
+          </div>
+        </Suspense>
+      ) : (
+        <SelectedPlayes />
+      )}
     </div>
   );
 }
