@@ -4,11 +4,10 @@ import PlayerCard from "../PlayerCard/PlayerCard";
 
 const AvailablePlayers = ({ playersPromise, setAvailableBalance, availableBalance }) => {
   const playersData = use(playersPromise);
-  console.log(playersData);
   return (
     <>
-      {playersData.map((player) => (
-        <PlayerCard availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} player={player} />
+      {playersData.map((player, index) => (
+        <PlayerCard key={index} availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} player={player} />
       ))}
     </>
   );

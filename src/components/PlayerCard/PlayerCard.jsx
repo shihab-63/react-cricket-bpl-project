@@ -13,7 +13,7 @@ const PlayerCard = ({ player, setAvailableBalance, availableBalance }) => {
     setAvailableBalance(availableBalance - playerData.biddingPrice);
   };
   return (
-    <div className="bg-base-100 shadow-sm hover:shadow-xl transition-shadow duration-500 rounded-xl p-5">
+    <div className="border border-gray-200 mx-3 md:mx-0 shadow-sm hover:shadow-xl transition-shadow duration-500 rounded-xl p-5">
       <figure>
         <img
           className="bg-cover w-full bg-center h-72 rounded-xl"
