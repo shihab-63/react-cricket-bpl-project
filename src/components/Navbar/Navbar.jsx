@@ -4,7 +4,7 @@ import navLogo from "../../assets/logo.png";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar container mx-auto">
+      <div className="navbar max-w-7xl mx-auto px-0">
         <div className="flex-1">
           <img src={navLogo} alt="" />
         </div>
