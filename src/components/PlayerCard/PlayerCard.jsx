@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import groupImg from "../../assets/Group.png";
 import flagImg from "../../assets/flag.png";
 
-const PlayerCard = ({ player, setAvailableBalance, availableBalance }) => {
+const PlayerCard = ({
+  player,
+  setAvailableBalance,
+  availableBalance,
+  setPurchasedPlayers,
+  purchasedPlayers,
+}) => {
   const [isSelected, setIsSelected] = useState(false);
   // Handle Selected
   const handleSelected = (playerData) => {
     if (availableBalance < playerData.biddingPrice) {
-      return alert("Ja Vag Sala😁")
+      return alert("Ja Vag Sala😁");
     }
     setIsSelected(true);
     setAvailableBalance(availableBalance - playerData.biddingPrice);
+    setPurchasedPlayers([...purchasedPlayers, playerData]);
   };
   return (
     <div className="border border-gray-200 mx-3 md:mx-0 shadow-sm hover:shadow-xl transition-shadow duration-500 rounded-xl p-5">
