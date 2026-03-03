@@ -1,9 +1,11 @@
 import React from "react";
 import deleteImg from "../../assets/Frame.png";
+import { toast } from "react-toastify";
 
 const PurchasedPlayers = ({ player, removedPlayers }) => {
   const handlePlayersRemoved = () => {
     removedPlayers(player);
+    toast.warning("Deleted")
   };
   return (
     <div>

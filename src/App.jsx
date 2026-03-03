@@ -52,7 +52,36 @@ function App() {
 
       {activeTab === "available" ? (
         <Suspense
-          fallback={<span className="loading loading-dots loading-lg"></span>}
+          fallback={
+            <div className="flex my-80 justify-center items-center mt-8">
+              <div className="grid  grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="flex w-96 h-72 flex-col gap-4 border-2 border-gray-100 rounded-2xl p-8">
+                  <div className="skeleton h-96 w-full"></div>
+                  <div className="skeleton h-28 w-28"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                </div>
+                <div className="flex w-96 h-72 flex-col gap-4 border-2 border-gray-200 rounded-2xl p-8">
+                  <div className="skeleton h-96 w-full"></div>
+                  <div className="skeleton h-28 w-28"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                </div>
+                <div className="flex w-96 h-72 flex-col gap-4 border-2 border-gray-200 rounded-2xl p-8">
+                  <div className="skeleton h-96 w-full"></div>
+                  <div className="skeleton h-28 w-28"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                  <div className="skeleton h-28 w-full"></div>
+                </div>
+              </div>
+            </div>
+          }
         >
           <div className="max-w-7xl my-8 pb-64 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
             <AvailablePlayers
