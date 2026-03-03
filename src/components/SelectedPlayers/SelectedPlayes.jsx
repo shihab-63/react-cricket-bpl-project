@@ -3,7 +3,7 @@ import PurchasedPlayers from "../PurchasedPlayers/PurchasedPlayers";
 
 const SelectedPlayes = ({ purchasedPlayers, removedPlayers }) => {
   return (
-    <div className="max-w-7xl my-5 mx-auto">
+    <div className="max-w-7xl my-5 pb-52 mx-auto">
       {purchasedPlayers.length === 0 ? (
         <div className="flex flex-col items-center justify-center my-20 p-10 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-300">
           <img

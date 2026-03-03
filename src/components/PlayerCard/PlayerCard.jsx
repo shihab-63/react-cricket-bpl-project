@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import groupImg from "../../assets/Group.png";
 import flagImg from "../../assets/flag.png";
+import { toast } from "react-toastify";
 
 const PlayerCard = ({
   player,
@@ -13,11 +14,15 @@ const PlayerCard = ({
   // Handle Selected
   const handleSelected = (playerData) => {
     if (availableBalance < playerData.biddingPrice) {
-      return alert("Ja Vag Sala😁");
+      return toast("Ja Vag Sala😁");
+    }
+    if (purchasedPlayers.length === 6) {
+      return toast.error("Selecte Only 6 Players");
     }
     setIsSelected(true);
     setAvailableBalance(availableBalance - playerData.biddingPrice);
     setPurchasedPlayers([...purchasedPlayers, playerData]);
+    toast.success(`Selected ${purchasedPlayers.length + 1}`);
   };
   return (
     <div className="border border-gray-200 mx-3 md:mx-0 shadow-sm hover:shadow-xl transition-shadow duration-500 rounded-xl p-5">

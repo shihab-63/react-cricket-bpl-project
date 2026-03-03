@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar/Navbar";
 import SelectedPlayes from "./components/SelectedPlayers/SelectedPlayes";
 import HeroSection from "./components/HeroSection/HeroSection";
 import RoutingSection from "./components/RoutingSection/RoutingSection";
+import { ToastContainer } from "react-toastify";
+import FooterSection from "./components/FooterSection/FooterSection";
 
 // Fetch Players Data
 const fetchPlayers = async () => {
@@ -52,7 +54,7 @@ function App() {
         <Suspense
           fallback={<span className="loading loading-dots loading-lg"></span>}
         >
-          <div className="max-w-7xl my-8 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="max-w-7xl my-8 pb-64 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
             <AvailablePlayers
               purchasedPlayers={purchasedPlayers}
               setPurchasedPlayers={setPurchasedPlayers}
@@ -68,6 +70,8 @@ function App() {
           purchasedPlayers={purchasedPlayers}
         />
       )}
+      <FooterSection />
+      <ToastContainer position="top-center" />
     </div>
   );
 }

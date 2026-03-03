@@ -4,7 +4,6 @@ import deleteImg from "../../assets/Frame.png";
 const PurchasedPlayers = ({ player, removedPlayers }) => {
   const handlePlayersRemoved = () => {
     removedPlayers(player);
-    console.log(player)
   };
   return (
     <div>
